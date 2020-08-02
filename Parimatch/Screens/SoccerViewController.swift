@@ -8,11 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SoccerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        navigationController?.navigationBar.barTintColor = .black
+        view.backgroundColor = .blue
     }
 
 
