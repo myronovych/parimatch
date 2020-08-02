@@ -1,0 +1,6 @@
+framework module Pods_Parimatch {
+  umbrella header "Pods-Parimatch-umbrella.h"
+
+  export *
+  module * { export * }
+}
