@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44524AF9F344A3808AEBC7B0 /* Pods_Parimatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D067B5766A8877696E168CF8 /* Pods_Parimatch.framework */; };
 		5323211624D5E0D4007EC6EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323211524D5E0D4007EC6EB /* AppDelegate.swift */; };
 		5323211824D5E0D4007EC6EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323211724D5E0D4007EC6EB /* SceneDelegate.swift */; };
 		5323211A24D5E0D4007EC6EB /* SoccerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323211924D5E0D4007EC6EB /* SoccerViewController.swift */; };
@@ -14,9 +15,17 @@
 		5323212224D5E0DA007EC6EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5323212024D5E0DA007EC6EB /* LaunchScreen.storyboard */; };
 		5323214A24D694B9007EC6EB /* PMTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323214924D694B9007EC6EB /* PMTabBarController.swift */; };
 		5323214D24D6A05A007EC6EB /* BasketballViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323214C24D6A05A007EC6EB /* BasketballViewController.swift */; };
+		5323215324D6B436007EC6EB /* SoccerMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323215224D6B436007EC6EB /* SoccerMatch.swift */; };
+		5323215624D6B828007EC6EB /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323215524D6B828007EC6EB /* Site.swift */; };
+		5323215824D6B965007EC6EB /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323215724D6B965007EC6EB /* Api.swift */; };
+		5323215A24D6BE79007EC6EB /* SoccerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323215924D6BE79007EC6EB /* SoccerTableViewCell.swift */; };
+		5323215D24D6D241007EC6EB /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323215C24D6D241007EC6EB /* UIView+Ext.swift */; };
+		5323216124D7E5B9007EC6EB /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323216024D7E5B9007EC6EB /* TitleLabel.swift */; };
+		5323216424D7F8A7007EC6EB /* CoefficientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323216324D7F8A6007EC6EB /* CoefficientButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05C8D76F212E6D3FF1188E37 /* Pods-Parimatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parimatch.release.xcconfig"; path = "Target Support Files/Pods-Parimatch/Pods-Parimatch.release.xcconfig"; sourceTree = "<group>"; };
 		5323211224D5E0D4007EC6EB /* Parimatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parimatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5323211524D5E0D4007EC6EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5323211724D5E0D4007EC6EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +35,15 @@
 		5323212324D5E0DA007EC6EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5323214924D694B9007EC6EB /* PMTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMTabBarController.swift; sourceTree = "<group>"; };
 		5323214C24D6A05A007EC6EB /* BasketballViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballViewController.swift; sourceTree = "<group>"; };
+		5323215224D6B436007EC6EB /* SoccerMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerMatch.swift; sourceTree = "<group>"; };
+		5323215524D6B828007EC6EB /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
+		5323215724D6B965007EC6EB /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		5323215924D6BE79007EC6EB /* SoccerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerTableViewCell.swift; sourceTree = "<group>"; };
+		5323215C24D6D241007EC6EB /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		5323216024D7E5B9007EC6EB /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
+		5323216324D7F8A6007EC6EB /* CoefficientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoefficientButton.swift; sourceTree = "<group>"; };
+		B1E544AEE2D7010BB85F772A /* Pods-Parimatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parimatch.debug.xcconfig"; path = "Target Support Files/Pods-Parimatch/Pods-Parimatch.debug.xcconfig"; sourceTree = "<group>"; };
+		D067B5766A8877696E168CF8 /* Pods_Parimatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parimatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +51,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44524AF9F344A3808AEBC7B0 /* Pods_Parimatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		506A550C50A1BFD7389EF495 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B1E544AEE2D7010BB85F772A /* Pods-Parimatch.debug.xcconfig */,
+				05C8D76F212E6D3FF1188E37 /* Pods-Parimatch.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5323210924D5E0D4007EC6EB = {
 			isa = PBXGroup;
 			children = (
 				5323211424D5E0D4007EC6EB /* Parimatch */,
 				5323211324D5E0D4007EC6EB /* Products */,
+				506A550C50A1BFD7389EF495 /* Pods */,
+				71D69E566A51DA88C4B516D9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,12 +88,12 @@
 		5323211424D5E0D4007EC6EB /* Parimatch */ = {
 			isa = PBXGroup;
 			children = (
+				5323215B24D6D216007EC6EB /* Extensions */,
+				5323215424D6B70A007EC6EB /* Utilities */,
+				5323215124D6B428007EC6EB /* Models */,
+				5323214F24D6B199007EC6EB /* Views */,
 				5323214B24D6A02E007EC6EB /* Screens */,
-				5323211524D5E0D4007EC6EB /* AppDelegate.swift */,
-				5323211724D5E0D4007EC6EB /* SceneDelegate.swift */,
-				5323214924D694B9007EC6EB /* PMTabBarController.swift */,
-				5323211E24D5E0DA007EC6EB /* Assets.xcassets */,
-				5323212024D5E0DA007EC6EB /* LaunchScreen.storyboard */,
+				5323214E24D6B0CE007EC6EB /* Helpers */,
 				5323212324D5E0DA007EC6EB /* Info.plist */,
 			);
 			path = Parimatch;
@@ -78,6 +108,93 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		5323214E24D6B0CE007EC6EB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5323211524D5E0D4007EC6EB /* AppDelegate.swift */,
+				5323211724D5E0D4007EC6EB /* SceneDelegate.swift */,
+				5323211E24D5E0DA007EC6EB /* Assets.xcassets */,
+				5323212024D5E0DA007EC6EB /* LaunchScreen.storyboard */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5323214F24D6B199007EC6EB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5323216224D7F869007EC6EB /* Buttons */,
+				5323215F24D6FFBF007EC6EB /* Labels */,
+				5323215E24D6FF7E007EC6EB /* Cell */,
+				5323215024D6B1D9007EC6EB /* TabBars */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5323215024D6B1D9007EC6EB /* TabBars */ = {
+			isa = PBXGroup;
+			children = (
+				5323214924D694B9007EC6EB /* PMTabBarController.swift */,
+			);
+			path = TabBars;
+			sourceTree = "<group>";
+		};
+		5323215124D6B428007EC6EB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5323215224D6B436007EC6EB /* SoccerMatch.swift */,
+				5323215524D6B828007EC6EB /* Site.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5323215424D6B70A007EC6EB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5323215724D6B965007EC6EB /* Api.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		5323215B24D6D216007EC6EB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5323215C24D6D241007EC6EB /* UIView+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5323215E24D6FF7E007EC6EB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5323215924D6BE79007EC6EB /* SoccerTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		5323215F24D6FFBF007EC6EB /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				5323216024D7E5B9007EC6EB /* TitleLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		5323216224D7F869007EC6EB /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				5323216324D7F8A6007EC6EB /* CoefficientButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		71D69E566A51DA88C4B516D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D067B5766A8877696E168CF8 /* Pods_Parimatch.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,9 +202,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5323212624D5E0DA007EC6EB /* Build configuration list for PBXNativeTarget "Parimatch" */;
 			buildPhases = (
+				0D5248AA47CCBD4179311705 /* [CP] Check Pods Manifest.lock */,
 				5323210E24D5E0D4007EC6EB /* Sources */,
 				5323210F24D5E0D4007EC6EB /* Frameworks */,
 				5323211024D5E0D4007EC6EB /* Resources */,
+				B5B400E8F7C100B157FB5F8A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -143,15 +262,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0D5248AA47CCBD4179311705 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Parimatch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5B400E8F7C100B157FB5F8A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Parimatch/Pods-Parimatch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Parimatch/Pods-Parimatch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Parimatch/Pods-Parimatch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5323210E24D5E0D4007EC6EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5323215624D6B828007EC6EB /* Site.swift in Sources */,
+				5323216424D7F8A7007EC6EB /* CoefficientButton.swift in Sources */,
 				5323214A24D694B9007EC6EB /* PMTabBarController.swift in Sources */,
+				5323215D24D6D241007EC6EB /* UIView+Ext.swift in Sources */,
+				5323215324D6B436007EC6EB /* SoccerMatch.swift in Sources */,
+				5323216124D7E5B9007EC6EB /* TitleLabel.swift in Sources */,
+				5323215A24D6BE79007EC6EB /* SoccerTableViewCell.swift in Sources */,
 				5323211A24D5E0D4007EC6EB /* SoccerViewController.swift in Sources */,
 				5323211624D5E0D4007EC6EB /* AppDelegate.swift in Sources */,
 				5323214D24D6A05A007EC6EB /* BasketballViewController.swift in Sources */,
+				5323215824D6B965007EC6EB /* Api.swift in Sources */,
 				5323211824D5E0D4007EC6EB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +454,7 @@
 		};
 		5323212724D5E0DA007EC6EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1E544AEE2D7010BB85F772A /* Pods-Parimatch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +473,7 @@
 		};
 		5323212824D5E0DA007EC6EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05C8D76F212E6D3FF1188E37 /* Pods-Parimatch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

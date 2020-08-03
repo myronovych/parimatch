@@ -13,8 +13,14 @@ class BasketballViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureColors()
+        title = "Basketball"
+    }
+    
+    private func configureColors() {
         navigationController?.navigationBar.barTintColor = .black
-        view.backgroundColor = .systemPink
+        view.backgroundColor = .systemGray2
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemYellow]
     }
     
 
