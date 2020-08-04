@@ -12,4 +12,10 @@ struct Site: Decodable {
     let siteKey: String
     let siteNice: String
     let odds: [String: [Double]]
+    
+    enum CodingKeys: String, CodingKey {
+        case siteKey = "site_key"
+        case siteNice = "site_nice"
+        case odds
+    }
 }

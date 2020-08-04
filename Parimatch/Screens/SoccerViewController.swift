@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SoccerViewController: UIViewController {
     
@@ -19,6 +20,7 @@ class SoccerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchSoccerMatches()
         title = "Soccer"
         configureColors()
         configureTableView()
@@ -71,6 +73,17 @@ extension SoccerViewController: MatchBetDelegate {
         selectedButton = sender
         selectedBet = SoccerBet(soccerMatch: soccerMatch, betOption: sender.betOption, coefficient: Double(sender.coefficientLabel.text ?? "1.0")!)
         selectedButton!.layer.backgroundColor = UIColor.cyan.cgColor
+    }
+    
+    private func fetchSoccerMatches() {
+        let request = AF.request("https://api.the-odds-api.com/v3/odds/?apiKey=\(Api.apiKey)&sport=soccer&region=eu&mkt=h2h")
+        request.responseDecodable(of: SoccerMatches.self) { response in
+            guard let matches = response.value else {
+                print(response.error)
+                return }
+            self.matches = matches.data
+            self.tableView.reloadData()
+        }
     }
 }
 

@@ -14,4 +14,12 @@ struct SoccerMatch: Decodable {
     let commenceTime: Date
     let homeTeam: String
     let sites: [Site]
+    
+    enum CodingKeys: String, CodingKey {
+        case sportNice = "sport_nice"
+        case teams
+        case commenceTime = "commence_time"
+        case homeTeam = "home_team"
+        case sites
+    }
 }
