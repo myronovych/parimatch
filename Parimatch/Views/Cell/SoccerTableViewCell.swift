@@ -91,10 +91,13 @@ class SoccerTableViewCell: UITableViewCell {
         hstackCoeffs.axis = .horizontal
         hstackCoeffs.distribution = .fillEqually
         hstackCoeffs.alignment = .center
+       
         hstackCoeffs.addArrangedSubview(firstWinnerButton)
         hstackCoeffs.addArrangedSubview(drawButton)
         hstackCoeffs.addArrangedSubview(secondWinnerButton)
         hstackCoeffs.spacing = 5
+        self.firstWinnerButton.addTarget(self, action: #selector(self.firstPressed), for: .touchUpInside)
+        
         
         NSLayoutConstraint.activate([
             hstackCoeffs.topAnchor.constraint(equalTo: hstackTeams.bottomAnchor, constant: 10),
@@ -102,6 +105,10 @@ class SoccerTableViewCell: UITableViewCell {
             hstackCoeffs.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10),
             hstackCoeffs.heightAnchor.constraint(equalToConstant: 50),
         ])
+    }
+    
+    @objc func firstPressed() {
+        print("pressed button")
     }
     
     private func configureDateLabel() {
@@ -167,6 +174,5 @@ class SoccerTableViewCell: UITableViewCell {
         
         let secondTeamCoff = match.sites[0].odds["h2h"]?[1] ?? 1
         secondWinnerButton.setCoefficient(coefficient: secondTeamCoff)
-        
     }
 }
