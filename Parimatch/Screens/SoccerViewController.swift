@@ -12,18 +12,30 @@ import Alamofire
 class SoccerViewController: UIViewController {
     
     let tableView = UITableView()
-    var matches = [match1]
+    var matches = [SoccerMatch]()
     
     var selectedBet: SoccerBet?
     var selectedButton: CoefficientButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Soccer"
         
         fetchSoccerMatches()
-        title = "Soccer"
         configureColors()
         configureTableView()
+    }
+    
+    private func fetchSoccerMatches() {
+        let request = AF.request("https://api.the-odds-api.com/v3/odds/?apiKey=\(Api.apiKey)&sport=soccer&region=eu&mkt=h2h")
+        request.responseDecodable(of: SoccerMatches.self) { response in
+            guard let matches = response.value else {
+                print(response.error!.localizedDescription)
+                return }
+            
+            self.matches = matches.data
+            self.tableView.reloadData()
+        }
     }
     
     private func configureColors() {
@@ -61,8 +73,8 @@ extension SoccerViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension SoccerViewController: MatchBetDelegate {
+    
     func didSelectBet(soccerMatch: SoccerMatch, sender: CoefficientButton) {
-        
         if let selectedButton = selectedButton {
             selectedButton.layer.backgroundColor = UIColor.systemGray.cgColor
             selectedBet = nil
@@ -74,20 +86,9 @@ extension SoccerViewController: MatchBetDelegate {
         selectedBet = SoccerBet(soccerMatch: soccerMatch, betOption: sender.betOption, coefficient: Double(sender.coefficientLabel.text ?? "1.0")!)
         selectedButton!.layer.backgroundColor = UIColor.cyan.cgColor
     }
-    
-    private func fetchSoccerMatches() {
-        let request = AF.request("https://api.the-odds-api.com/v3/odds/?apiKey=\(Api.apiKey)&sport=soccer&region=eu&mkt=h2h")
-        request.responseDecodable(of: SoccerMatches.self) { response in
-            guard let matches = response.value else {
-                print(response.error)
-                return }
-            self.matches = matches.data
-            self.tableView.reloadData()
-        }
-    }
 }
 
 
-
-let match1 = SoccerMatch(sportNice: "EPL", teams: ["Man U.", "Arsenal"], commenceTime: Date(timeIntervalSince1970: 1415637900), homeTeam: "Arsenal", sites: [site1])
-let site1 = Site(siteKey: "PariMatch", siteNice: "Parimatch", odds: ["h2h":[2.0, 3.4, 4.5]])
+//test data
+//let match1 = SoccerMatch(sportNice: "EPL", teams: ["Man U.", "Arsenal"], commenceTime: Date(timeIntervalSince1970: 1415637900), homeTeam: "Arsenal", sites: [site1])
+//let site1 = Site(siteKey: "PariMatch", siteNice: "Parimatch", odds: ["h2h":[2.0, 3.4, 4.5]])

@@ -9,7 +9,7 @@
 import UIKit
 
 class TitleLabel: UILabel {
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -31,5 +31,4 @@ class TitleLabel: UILabel {
         minimumScaleFactor = 0.8
         lineBreakMode = .byTruncatingTail
     }
-    
 }

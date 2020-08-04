@@ -36,25 +36,20 @@ class CoefficientButton: UIButton {
     }
     
     private func configureContainer() {
-
         translatesAutoresizingMaskIntoConstraints = false
-        
         layer.cornerRadius = 5
         layer.backgroundColor = UIColor.systemGray.cgColor
-        tintColor = .blue
     }
     
     private func configureWinnerLabel() {
         addSubview(winnerLabel)
+        
         winnerLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         winnerLabel.textAlignment = .right
-        
-        let padding: CGFloat = 8
-        
+                
         NSLayoutConstraint.activate([
             winnerLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            winnerLabel.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -padding),
+            winnerLabel.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -8),
             winnerLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             winnerLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
@@ -62,19 +57,15 @@ class CoefficientButton: UIButton {
     
     private func configureCoefficientLabel() {
         addSubview(coefficientLabel)
-        coefficientLabel.translatesAutoresizingMaskIntoConstraints = false
         
+        coefficientLabel.translatesAutoresizingMaskIntoConstraints = false
         coefficientLabel.textAlignment = .left
         
-        let padding: CGFloat = 8
-        
         NSLayoutConstraint.activate([
-            coefficientLabel.leadingAnchor.constraint(equalTo: centerXAnchor, constant: padding),
+            coefficientLabel.leadingAnchor.constraint(equalTo: centerXAnchor, constant: 8),
             coefficientLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             coefficientLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             coefficientLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
-    
-    
 }

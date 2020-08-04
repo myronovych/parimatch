@@ -25,6 +25,7 @@
 		5323216624D98077007EC6EB /* SoccerBetOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323216524D98077007EC6EB /* SoccerBetOption.swift */; };
 		5323216824D98510007EC6EB /* SoccerBet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323216724D98510007EC6EB /* SoccerBet.swift */; };
 		5323216B24D99C32007EC6EB /* SoccerMatches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323216A24D99C32007EC6EB /* SoccerMatches.swift */; };
+		5323216E24D9AE6D007EC6EB /* MatchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323216D24D9AE6D007EC6EB /* MatchCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		5323216524D98077007EC6EB /* SoccerBetOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerBetOption.swift; sourceTree = "<group>"; };
 		5323216724D98510007EC6EB /* SoccerBet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerBet.swift; sourceTree = "<group>"; };
 		5323216A24D99C32007EC6EB /* SoccerMatches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerMatches.swift; sourceTree = "<group>"; };
+		5323216D24D9AE6D007EC6EB /* MatchCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCard.swift; sourceTree = "<group>"; };
 		B1E544AEE2D7010BB85F772A /* Pods-Parimatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parimatch.debug.xcconfig"; path = "Target Support Files/Pods-Parimatch/Pods-Parimatch.debug.xcconfig"; sourceTree = "<group>"; };
 		D067B5766A8877696E168CF8 /* Pods_Parimatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parimatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,7 +96,6 @@
 		5323211424D5E0D4007EC6EB /* Parimatch */ = {
 			isa = PBXGroup;
 			children = (
-				5323216924D98C1D007EC6EB /* Managers */,
 				5323215B24D6D216007EC6EB /* Extensions */,
 				5323215424D6B70A007EC6EB /* Utilities */,
 				5323215124D6B428007EC6EB /* Models */,
@@ -129,6 +130,7 @@
 		5323214F24D6B199007EC6EB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5323216C24D9AE3C007EC6EB /* CustomViews */,
 				5323216224D7F869007EC6EB /* Buttons */,
 				5323215F24D6FFBF007EC6EB /* Labels */,
 				5323215E24D6FF7E007EC6EB /* Cell */,
@@ -197,11 +199,12 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
-		5323216924D98C1D007EC6EB /* Managers */ = {
+		5323216C24D9AE3C007EC6EB /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				5323216D24D9AE6D007EC6EB /* MatchCard.swift */,
 			);
-			path = Managers;
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		71D69E566A51DA88C4B516D9 /* Frameworks */ = {
@@ -327,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5323215624D6B828007EC6EB /* Site.swift in Sources */,
+				5323216E24D9AE6D007EC6EB /* MatchCard.swift in Sources */,
 				5323216424D7F8A7007EC6EB /* CoefficientButton.swift in Sources */,
 				5323214A24D694B9007EC6EB /* PMTabBarController.swift in Sources */,
 				5323215D24D6D241007EC6EB /* UIView+Ext.swift in Sources */,

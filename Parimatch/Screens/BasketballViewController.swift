@@ -12,9 +12,9 @@ class BasketballViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Basketball"
         
         configureColors()
-        title = "Basketball"
     }
     
     private func configureColors() {
@@ -22,7 +22,4 @@ class BasketballViewController: UIViewController {
         view.backgroundColor = .systemGray2
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemYellow]
     }
-    
-
-
 }

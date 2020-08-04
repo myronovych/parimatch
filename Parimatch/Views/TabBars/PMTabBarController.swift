@@ -9,15 +9,16 @@
 import UIKit
 
 class PMTabBarController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         UITabBar.appearance().tintColor = .systemYellow
         UITabBar.appearance().barTintColor = .black
+        
         viewControllers = [configureSoccerVC(), configureBasketballVC()]
     }
     
-
     func configureSoccerVC() -> UINavigationController {
         let soccerVC = SoccerViewController()
         soccerVC.tabBarItem = UITabBarItem(title: "Soccer", image: UIImage(named: "soccerLogo"), tag: 0)
@@ -25,12 +26,10 @@ class PMTabBarController: UITabBarController {
         return UINavigationController(rootViewController: soccerVC)
     }
     
-    
     func configureBasketballVC() -> UINavigationController {
         let basketballVC = BasketballViewController()
         basketballVC.tabBarItem = UITabBarItem(title: "Basketball", image: UIImage(named: "basketballLogo"), tag: 1)
         
         return UINavigationController(rootViewController: basketballVC)
     }
-
 }
