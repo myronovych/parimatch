@@ -23,8 +23,6 @@ class SoccerTableViewCell: UITableViewCell {
     let bigHSeperator = UIView()
 
     let sportNiceLabel = UILabel()
-    let dateLabel = UILabel()
-    let timeLabel = UILabel()
     
     let hstackTeams = UIStackView()
     let firstTeamLabel = TitleLabel(alignment: .center, fontSize: 15)
@@ -34,6 +32,10 @@ class SoccerTableViewCell: UITableViewCell {
     let firstWinnerButton = CoefficientButton(betOption: SoccerBetOption.W1)
     let drawButton = CoefficientButton(betOption: SoccerBetOption.X)
     let secondWinnerButton = CoefficientButton(betOption: SoccerBetOption.W2)
+    
+    let vstackTime = UIStackView()
+    let dateLabel = UILabel()
+    let timeLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -63,23 +65,23 @@ class SoccerTableViewCell: UITableViewCell {
             containerView.topAnchor.constraint(equalTo: topAnchor, constant: padding),
             containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
-            containerView.heightAnchor.constraint(equalToConstant: 160)
+            containerView.heightAnchor.constraint(equalToConstant: 170)
         ])
     }
     
     private func configureContainersSubviews() {
-        containerView.addSubviews(sportNiceLabel, hstackTeams, dateLabel, timeLabel, hstackCoeffs, bigHSeperator)
+        containerView.addSubviews(sportNiceLabel, hstackTeams, hstackCoeffs, bigHSeperator, vstackTime)
         
         configureSportNiceLabel()
         configureHStackTeams()
         configureBigHSeperator()
-        configureDateLabel()
-        configureTimeLabel()
         configureHStackCoeffs()
+        configureVStackTime()
     }
     
     private func configureHStackTeams() {
         hstackTeams.addArrangedSubview(secondTeamLabel)
+        hstackTeams.addArrangedSubview(vstackTime)
         hstackTeams.addArrangedSubview(firstTeamLabel)
         
         hstackTeams.axis = .horizontal
@@ -92,6 +94,21 @@ class SoccerTableViewCell: UITableViewCell {
             hstackTeams.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10),
             hstackTeams.heightAnchor.constraint(equalToConstant: 50),
         ])
+    }
+    
+    private func configureVStackTime() {
+        vstackTime.addArrangedSubview(timeLabel)
+        vstackTime.addArrangedSubview(dateLabel)
+        
+        vstackTime.axis = .vertical
+        vstackTime.distribution = .fillEqually
+        vstackTime.alignment = .center
+        
+        timeLabel.font = Fonts.gilroyExtraBold?.withSize(30)
+        timeLabel.textColor = Colors.subGray
+
+        dateLabel.font = Fonts.gilroyRegular?.withSize(15)
+        dateLabel.textColor = Colors.subGray
     }
     
     private func configureHStackCoeffs() {
@@ -111,7 +128,7 @@ class SoccerTableViewCell: UITableViewCell {
         }
         
         NSLayoutConstraint.activate([
-            hstackCoeffs.topAnchor.constraint(equalTo: bigHSeperator.bottomAnchor, constant: 10),
+            hstackCoeffs.topAnchor.constraint(equalTo: bigHSeperator.bottomAnchor, constant: 5),
             hstackCoeffs.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10),
             hstackCoeffs.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10),
             hstackCoeffs.heightAnchor.constraint(equalToConstant: 50),
@@ -122,29 +139,7 @@ class SoccerTableViewCell: UITableViewCell {
         betDelegate.didSelectBet(soccerMatch: soccerMatch, sender: sender)
     }
     
-    private func configureDateLabel() {
-        dateLabel.textAlignment = .right
-        
-        let padding: CGFloat = 10
-        
-        NSLayoutConstraint.activate([
-            dateLabel.topAnchor.constraint(equalTo: sportNiceLabel.topAnchor),
-            dateLabel.leadingAnchor.constraint(equalTo: containerView.centerXAnchor, constant: -padding),
-            dateLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
-            dateLabel.heightAnchor.constraint(equalToConstant:  20)
-        ])
-    }
     
-    private func configureTimeLabel() {
-        timeLabel.textAlignment = .center
-        
-        NSLayoutConstraint.activate([
-            timeLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            timeLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-            timeLabel.topAnchor.constraint(equalTo: sportNiceLabel.bottomAnchor),
-            timeLabel.heightAnchor.constraint(equalToConstant: 20)
-        ])
-    }
     
     private func configureBigHSeperator() {
         bigHSeperator.backgroundColor = .black
@@ -153,14 +148,15 @@ class SoccerTableViewCell: UITableViewCell {
             bigHSeperator.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             bigHSeperator.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             bigHSeperator.heightAnchor.constraint(equalToConstant: 2),
-            bigHSeperator.topAnchor.constraint(equalTo: hstackTeams.bottomAnchor)
+            bigHSeperator.topAnchor.constraint(equalTo: hstackTeams.bottomAnchor, constant: 10)
         ])
     }
     
     
     
     private func configureSportNiceLabel() {
-        sportNiceLabel.font = Fonts.pmFont
+        sportNiceLabel.font = Fonts.pmFont?.withSize(20)
+        sportNiceLabel.textColor = Colors.subGray
         
         let padding: CGFloat = 10
         
@@ -168,7 +164,7 @@ class SoccerTableViewCell: UITableViewCell {
             sportNiceLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: padding),
             sportNiceLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
             sportNiceLabel.trailingAnchor.constraint(equalTo: containerView.centerXAnchor, constant: -padding),
-            sportNiceLabel.heightAnchor.constraint(equalToConstant: 20)
+            sportNiceLabel.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
     

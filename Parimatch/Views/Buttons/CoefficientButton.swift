@@ -27,7 +27,7 @@ class CoefficientButton: UIButton {
     convenience init(betOption: SoccerBetOption) {
         self.init(frame: .zero)
         self.betOption = betOption
-        winnerLabel.text = betOption.rawValue
+        winnerLabel.text = betOption.rawValue + ":"
         
         NSLayoutConstraint.activate([
             widthAnchor.constraint(equalToConstant: 100)
@@ -45,12 +45,13 @@ class CoefficientButton: UIButton {
         winnerLabel.translatesAutoresizingMaskIntoConstraints = false
         winnerLabel.textAlignment = .right
         winnerLabel.textColor = Colors.subGray
+        winnerLabel.font = Fonts.pmFont
                 
         NSLayoutConstraint.activate([
             winnerLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             winnerLabel.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -8),
             winnerLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            winnerLabel.heightAnchor.constraint(equalToConstant: 20)
+            winnerLabel.heightAnchor.constraint(equalToConstant: 25)
         ])
     }
     
@@ -66,7 +67,7 @@ class CoefficientButton: UIButton {
             coefficientLabel.leadingAnchor.constraint(equalTo: centerXAnchor, constant: 8),
             coefficientLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             coefficientLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            coefficientLabel.heightAnchor.constraint(equalToConstant: 20)
+            coefficientLabel.heightAnchor.constraint(equalToConstant: 25)
         ])
     }
 }

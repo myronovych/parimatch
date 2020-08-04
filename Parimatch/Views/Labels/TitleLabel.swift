@@ -28,7 +28,8 @@ class TitleLabel: UILabel {
     private func configure() {
         textColor = .label
         adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.8
+        minimumScaleFactor = 0.6
+        numberOfLines = 2
         lineBreakMode = .byTruncatingTail
         font = Fonts.pmFont
         textColor = Colors.mainYellow
