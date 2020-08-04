@@ -30,6 +30,11 @@
 		5323217224D9B778007EC6EB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323217124D9B778007EC6EB /* Constants.swift */; };
 		5323217724D9BBA5007EC6EB /* Pari-Match-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5323217624D9BBA5007EC6EB /* Pari-Match-Regular.ttf */; };
 		5323217924D9C061007EC6EB /* SmallVSeperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323217824D9C061007EC6EB /* SmallVSeperator.swift */; };
+		5323217F24D9D23B007EC6EB /* Parimatch-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5323217A24D9D23A007EC6EB /* Parimatch-Thin.otf */; };
+		5323218024D9D23B007EC6EB /* Parimatch-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5323217B24D9D23B007EC6EB /* Parimatch-Medium.otf */; };
+		5323218124D9D23B007EC6EB /* Parimatch-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5323217C24D9D23B007EC6EB /* Parimatch-Bold.otf */; };
+		5323218224D9D23B007EC6EB /* Parimatch-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5323217D24D9D23B007EC6EB /* Parimatch-Light.otf */; };
+		5323218324D9D23B007EC6EB /* Parimatch-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5323217E24D9D23B007EC6EB /* Parimatch-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +63,11 @@
 		5323217124D9B778007EC6EB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5323217624D9BBA5007EC6EB /* Pari-Match-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pari-Match-Regular.ttf"; sourceTree = "<group>"; };
 		5323217824D9C061007EC6EB /* SmallVSeperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallVSeperator.swift; sourceTree = "<group>"; };
+		5323217A24D9D23A007EC6EB /* Parimatch-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Parimatch-Thin.otf"; sourceTree = "<group>"; };
+		5323217B24D9D23B007EC6EB /* Parimatch-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Parimatch-Medium.otf"; sourceTree = "<group>"; };
+		5323217C24D9D23B007EC6EB /* Parimatch-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Parimatch-Bold.otf"; sourceTree = "<group>"; };
+		5323217D24D9D23B007EC6EB /* Parimatch-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Parimatch-Light.otf"; sourceTree = "<group>"; };
+		5323217E24D9D23B007EC6EB /* Parimatch-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Parimatch-Regular.otf"; sourceTree = "<group>"; };
 		B1E544AEE2D7010BB85F772A /* Pods-Parimatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parimatch.debug.xcconfig"; path = "Target Support Files/Pods-Parimatch/Pods-Parimatch.debug.xcconfig"; sourceTree = "<group>"; };
 		D067B5766A8877696E168CF8 /* Pods_Parimatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parimatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -222,6 +232,11 @@
 		5323217324D9B9E7007EC6EB /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				5323217C24D9D23B007EC6EB /* Parimatch-Bold.otf */,
+				5323217D24D9D23B007EC6EB /* Parimatch-Light.otf */,
+				5323217B24D9D23B007EC6EB /* Parimatch-Medium.otf */,
+				5323217E24D9D23B007EC6EB /* Parimatch-Regular.otf */,
+				5323217A24D9D23A007EC6EB /* Parimatch-Thin.otf */,
 				5323217624D9BBA5007EC6EB /* Pari-Match-Regular.ttf */,
 			);
 			path = Fonts;
@@ -297,6 +312,11 @@
 			files = (
 				5323212224D5E0DA007EC6EB /* LaunchScreen.storyboard in Resources */,
 				5323211F24D5E0DA007EC6EB /* Assets.xcassets in Resources */,
+				5323217F24D9D23B007EC6EB /* Parimatch-Thin.otf in Resources */,
+				5323218024D9D23B007EC6EB /* Parimatch-Medium.otf in Resources */,
+				5323218324D9D23B007EC6EB /* Parimatch-Regular.otf in Resources */,
+				5323218224D9D23B007EC6EB /* Parimatch-Light.otf in Resources */,
+				5323218124D9D23B007EC6EB /* Parimatch-Bold.otf in Resources */,
 				5323217724D9BBA5007EC6EB /* Pari-Match-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

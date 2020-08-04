@@ -15,5 +15,5 @@ enum Colors {
 }
 
 enum Fonts {
-    static let pmFont = UIFont(name: "Pari-Match-Regular", size: 25)
+    static let pmFont = UIFont(name: "Pari-Match", size: 25)
 }
