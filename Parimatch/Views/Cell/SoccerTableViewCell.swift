@@ -14,13 +14,20 @@ class SoccerTableViewCell: UITableViewCell {
     private var soccerMatch: SoccerMatch!
     
     let containerView = UIView()
-    let hstack = UIStackView()
+
     let sportNiceLabel = UILabel()
     let dateLabel = UILabel()
     let timeLabel = UILabel()
+    
+    let hstackTeams = UIStackView()
     let firstTeamLabel = TitleLabel(alignment: .center, fontSize: 15)
     let secondTeamLabel = TitleLabel(alignment: .center, fontSize: 15)
     
+    let hstackCoeffs = UIStackView()
+    let firstWinnerButton = CoefficientButton(winnerLabelText: "W1")
+    let drawButton = CoefficientButton(winnerLabelText: "X")
+    let secondWinnerButton = CoefficientButton(winnerLabelText: "W2")
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -57,26 +64,43 @@ class SoccerTableViewCell: UITableViewCell {
     }
     
     private func configureContainersSubviews() {
-        containerView.addSubviews(sportNiceLabel, hstack, dateLabel, timeLabel)
+        containerView.addSubviews(sportNiceLabel, hstackTeams, dateLabel, timeLabel, hstackCoeffs)
         configureSportNiceLabel()
-        configureHStack()
+        configureHStackTeams()
         configureDateLabel()
         configureTimeLabel()
+        configureHStackCoeffs()
     }
     
-    private func configureHStack() {
-        hstack.axis = .horizontal
-        hstack.distribution = .fillEqually
-        hstack.alignment = .center
-        hstack.addArrangedSubview(secondTeamLabel)
-        hstack.addArrangedSubview(firstTeamLabel)
-        
+    private func configureHStackTeams() {
+        hstackTeams.axis = .horizontal
+        hstackTeams.distribution = .fillEqually
+        hstackTeams.alignment = .center
+        hstackTeams.addArrangedSubview(secondTeamLabel)
+        hstackTeams.addArrangedSubview(firstTeamLabel)
         
         NSLayoutConstraint.activate([
-            hstack.topAnchor.constraint(equalTo: sportNiceLabel.bottomAnchor, constant: 10),
-            hstack.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10),
-            hstack.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10),
-            hstack.heightAnchor.constraint(equalToConstant: 50),
+            hstackTeams.topAnchor.constraint(equalTo: sportNiceLabel.bottomAnchor, constant: 10),
+            hstackTeams.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10),
+            hstackTeams.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10),
+            hstackTeams.heightAnchor.constraint(equalToConstant: 50),
+        ])
+    }
+    
+    private func configureHStackCoeffs() {
+        hstackCoeffs.axis = .horizontal
+        hstackCoeffs.distribution = .fillEqually
+        hstackCoeffs.alignment = .center
+        hstackCoeffs.addArrangedSubview(firstWinnerButton)
+        hstackCoeffs.addArrangedSubview(drawButton)
+        hstackCoeffs.addArrangedSubview(secondWinnerButton)
+        hstackCoeffs.spacing = 5
+        
+        NSLayoutConstraint.activate([
+            hstackCoeffs.topAnchor.constraint(equalTo: hstackTeams.bottomAnchor, constant: 10),
+            hstackCoeffs.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10),
+            hstackCoeffs.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10),
+            hstackCoeffs.heightAnchor.constraint(equalToConstant: 50),
         ])
     }
     
@@ -134,6 +158,15 @@ class SoccerTableViewCell: UITableViewCell {
         dateLabel.text = dateFormatter.string(from: match.commenceTime)
         dateFormatter.dateFormat = "HH:MM"
         timeLabel.text = dateFormatter.string(from: match.commenceTime)
+        
+        let firstTeamCoff = match.sites[0].odds["h2h"]?[0] ?? 1
+        firstWinnerButton.setCoefficient(coefficient: firstTeamCoff)
+        
+        let drawCoff = match.sites[0].odds["h2h"]?[2] ?? 1
+        drawButton.setCoefficient(coefficient: drawCoff)
+        
+        let secondTeamCoff = match.sites[0].odds["h2h"]?[1] ?? 1
+        secondWinnerButton.setCoefficient(coefficient: secondTeamCoff)
+        
     }
-    
 }
