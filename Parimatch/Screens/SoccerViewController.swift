@@ -13,6 +13,9 @@ class SoccerViewController: UIViewController {
     let tableView = UITableView()
     var matches = [match1]
     
+    var selectedBet: SoccerBet?
+    var selectedButton: CoefficientButton?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +41,6 @@ class SoccerViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
-    
 }
 
 extension SoccerViewController: UITableViewDataSource, UITableViewDelegate {
@@ -50,10 +52,29 @@ extension SoccerViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SoccerTableViewCell.reuseIdentifier) as! SoccerTableViewCell
         cell.setSoccerMatch(matches[indexPath.row])
+        cell.betDelegate = self
         
         return cell
     }
 }
+
+extension SoccerViewController: MatchBetDelegate {
+    func didSelectBet(soccerMatch: SoccerMatch, sender: CoefficientButton) {
+        
+        if let selectedButton = selectedButton {
+            selectedButton.layer.backgroundColor = UIColor.systemGray.cgColor
+            selectedBet = nil
+            self.selectedButton = nil
+            if selectedButton == sender { return }
+        }
+        
+        selectedButton = sender
+        selectedBet = SoccerBet(soccerMatch: soccerMatch, betOption: sender.betOption, coefficient: Double(sender.coefficientLabel.text ?? "1.0")!)
+        selectedButton!.layer.backgroundColor = UIColor.cyan.cgColor
+    }
+}
+
+
 
 let match1 = SoccerMatch(sportNice: "EPL", teams: ["Man U.", "Arsenal"], commenceTime: Date(timeIntervalSince1970: 1415637900), homeTeam: "Arsenal", sites: [site1])
 let site1 = Site(siteKey: "PariMatch", siteNice: "Parimatch", odds: ["h2h":[2.0, 3.4, 4.5]])

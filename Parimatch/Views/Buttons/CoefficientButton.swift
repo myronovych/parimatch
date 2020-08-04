@@ -12,6 +12,7 @@ class CoefficientButton: UIButton {
     
     let winnerLabel = UILabel()
     let coefficientLabel = UILabel()
+    var betOption: SoccerBetOption!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,9 +25,10 @@ class CoefficientButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(winnerLabelText: String) {
+    convenience init(betOption: SoccerBetOption) {
         self.init(frame: .zero)
-        winnerLabel.text = winnerLabelText
+        self.betOption = betOption
+        winnerLabel.text = betOption.rawValue
     }
     
     func setCoefficient(coefficient: Double) {
@@ -39,7 +41,7 @@ class CoefficientButton: UIButton {
         
         layer.cornerRadius = 5
         layer.backgroundColor = UIColor.systemGray.cgColor
-        
+        tintColor = .blue
     }
     
     private func configureWinnerLabel() {
@@ -73,4 +75,6 @@ class CoefficientButton: UIButton {
             coefficientLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
+    
+    
 }

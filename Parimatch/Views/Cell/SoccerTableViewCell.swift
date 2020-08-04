@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol MatchBetDelegate {
+    func didSelectBet(soccerMatch: SoccerMatch, sender: CoefficientButton)
+}
+
 class SoccerTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "soccerMatchCell"
     private var soccerMatch: SoccerMatch!
+    var betDelegate: MatchBetDelegate!
     
     let containerView = UIView()
 
@@ -24,9 +29,9 @@ class SoccerTableViewCell: UITableViewCell {
     let secondTeamLabel = TitleLabel(alignment: .center, fontSize: 15)
     
     let hstackCoeffs = UIStackView()
-    let firstWinnerButton = CoefficientButton(winnerLabelText: "W1")
-    let drawButton = CoefficientButton(winnerLabelText: "X")
-    let secondWinnerButton = CoefficientButton(winnerLabelText: "W2")
+    let firstWinnerButton = CoefficientButton(betOption: SoccerBetOption.W1)
+    let drawButton = CoefficientButton(betOption: SoccerBetOption.X)
+    let secondWinnerButton = CoefficientButton(betOption: SoccerBetOption.W2)
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -96,8 +101,9 @@ class SoccerTableViewCell: UITableViewCell {
         hstackCoeffs.addArrangedSubview(drawButton)
         hstackCoeffs.addArrangedSubview(secondWinnerButton)
         hstackCoeffs.spacing = 5
-        self.firstWinnerButton.addTarget(self, action: #selector(self.firstPressed), for: .touchUpInside)
-        
+        self.firstWinnerButton.addTarget(self, action: #selector(self.coeffPressed(_:)), for: .touchUpInside)
+         self.secondWinnerButton.addTarget(self, action: #selector(self.coeffPressed(_:)), for: .touchUpInside)
+        self.drawButton.addTarget(self, action: #selector(self.coeffPressed(_:)), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             hstackCoeffs.topAnchor.constraint(equalTo: hstackTeams.bottomAnchor, constant: 10),
@@ -107,8 +113,8 @@ class SoccerTableViewCell: UITableViewCell {
         ])
     }
     
-    @objc func firstPressed() {
-        print("pressed button")
+    @objc func coeffPressed(_ sender: CoefficientButton!) {
+        betDelegate.didSelectBet(soccerMatch: soccerMatch, sender: sender)
     }
     
     private func configureDateLabel() {
