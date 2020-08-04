@@ -39,9 +39,9 @@ class SoccerViewController: UIViewController {
     }
     
     private func configureColors() {
-        navigationController?.navigationBar.barTintColor = .black
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemYellow]
-        view.backgroundColor = .systemGray2
+        navigationController?.navigationBar.barTintColor = Colors.mainYellow
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        view.backgroundColor = .black
     }
     
     private func configureTableView() {
@@ -50,7 +50,7 @@ class SoccerViewController: UIViewController {
         
         tableView.frame = view.bounds
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .systemGray2
+        tableView.backgroundColor = .black
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -64,7 +64,7 @@ extension SoccerViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SoccerTableViewCell.reuseIdentifier) as! SoccerTableViewCell
+        let cell = SoccerTableViewCell(style: .default, reuseIdentifier: SoccerTableViewCell.reuseIdentifier)
         cell.setSoccerMatch(matches[indexPath.row])
         cell.betDelegate = self
         
@@ -76,7 +76,8 @@ extension SoccerViewController: MatchBetDelegate {
     
     func didSelectBet(soccerMatch: SoccerMatch, sender: CoefficientButton) {
         if let selectedButton = selectedButton {
-            selectedButton.layer.backgroundColor = UIColor.systemGray.cgColor
+            selectedButton.winnerLabel.textColor = Colors.subGray
+            selectedButton.coefficientLabel.textColor = Colors.subGray
             selectedBet = nil
             self.selectedButton = nil
             if selectedButton == sender { return }
@@ -84,7 +85,8 @@ extension SoccerViewController: MatchBetDelegate {
         
         selectedButton = sender
         selectedBet = SoccerBet(soccerMatch: soccerMatch, betOption: sender.betOption, coefficient: Double(sender.coefficientLabel.text ?? "1.0")!)
-        selectedButton!.layer.backgroundColor = UIColor.cyan.cgColor
+        selectedButton!.winnerLabel.textColor = .cyan
+        selectedButton!.coefficientLabel.textColor = .cyan
     }
 }
 

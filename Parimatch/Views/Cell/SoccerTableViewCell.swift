@@ -20,7 +20,8 @@ class SoccerTableViewCell: UITableViewCell {
     var betDelegate: MatchBetDelegate!
     
     let containerView = MatchCard()
-    
+    let bigHSeperator = UIView()
+
     let sportNiceLabel = UILabel()
     let dateLabel = UILabel()
     let timeLabel = UILabel()
@@ -67,10 +68,11 @@ class SoccerTableViewCell: UITableViewCell {
     }
     
     private func configureContainersSubviews() {
-        containerView.addSubviews(sportNiceLabel, hstackTeams, dateLabel, timeLabel, hstackCoeffs)
+        containerView.addSubviews(sportNiceLabel, hstackTeams, dateLabel, timeLabel, hstackCoeffs, bigHSeperator)
         
         configureSportNiceLabel()
         configureHStackTeams()
+        configureBigHSeperator()
         configureDateLabel()
         configureTimeLabel()
         configureHStackCoeffs()
@@ -94,19 +96,22 @@ class SoccerTableViewCell: UITableViewCell {
     
     private func configureHStackCoeffs() {
         hstackCoeffs.axis = .horizontal
-        hstackCoeffs.distribution = .fillEqually
+        hstackCoeffs.distribution = .equalSpacing
         hstackCoeffs.alignment = .center
         hstackCoeffs.spacing = 5
         
         let buttons = [firstWinnerButton, drawButton, secondWinnerButton]
         
-        for button in buttons {
+        for (index, button) in buttons.enumerated() {
             hstackCoeffs.addArrangedSubview(button)
+            if index != buttons.count - 1 {
+                hstackCoeffs.addArrangedSubview(SmallVSeperator())
+            }
             button.addTarget(self, action: #selector(self.coeffPressed(_:)), for: .touchUpInside)
         }
         
         NSLayoutConstraint.activate([
-            hstackCoeffs.topAnchor.constraint(equalTo: hstackTeams.bottomAnchor, constant: 10),
+            hstackCoeffs.topAnchor.constraint(equalTo: bigHSeperator.bottomAnchor, constant: 10),
             hstackCoeffs.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10),
             hstackCoeffs.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10),
             hstackCoeffs.heightAnchor.constraint(equalToConstant: 50),
@@ -141,8 +146,21 @@ class SoccerTableViewCell: UITableViewCell {
         ])
     }
     
+    private func configureBigHSeperator() {
+        bigHSeperator.backgroundColor = .black
+        
+        NSLayoutConstraint.activate([
+            bigHSeperator.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            bigHSeperator.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            bigHSeperator.heightAnchor.constraint(equalToConstant: 2),
+            bigHSeperator.topAnchor.constraint(equalTo: hstackTeams.bottomAnchor)
+        ])
+    }
+    
+    
+    
     private func configureSportNiceLabel() {
-        sportNiceLabel.font = .systemFont(ofSize: 18)
+        sportNiceLabel.font = Fonts.pmFont
         
         let padding: CGFloat = 10
         
@@ -155,7 +173,7 @@ class SoccerTableViewCell: UITableViewCell {
     }
     
     private func configureCell() {
-        backgroundColor = .systemGray2
+        backgroundColor = .black
         selectionStyle = .none
         
         NSLayoutConstraint.activate([

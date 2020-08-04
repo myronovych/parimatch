@@ -13,8 +13,8 @@ class PMTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UITabBar.appearance().tintColor = .systemYellow
-        UITabBar.appearance().barTintColor = .black
+        UITabBar.appearance().tintColor = .black
+        UITabBar.appearance().barTintColor = Colors.mainYellow
         
         viewControllers = [configureSoccerVC(), configureBasketballVC()]
     }

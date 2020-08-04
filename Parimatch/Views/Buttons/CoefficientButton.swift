@@ -16,7 +16,6 @@ class CoefficientButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureContainer()
         configureWinnerLabel()
         configureCoefficientLabel()
     }
@@ -29,23 +28,23 @@ class CoefficientButton: UIButton {
         self.init(frame: .zero)
         self.betOption = betOption
         winnerLabel.text = betOption.rawValue
+        
+        NSLayoutConstraint.activate([
+            widthAnchor.constraint(equalToConstant: 100)
+        ])
     }
     
     func setCoefficient(coefficient: Double) {
         coefficientLabel.text = String(coefficient)
     }
     
-    private func configureContainer() {
-        translatesAutoresizingMaskIntoConstraints = false
-        layer.cornerRadius = 5
-        layer.backgroundColor = UIColor.systemGray.cgColor
-    }
     
     private func configureWinnerLabel() {
         addSubview(winnerLabel)
         
         winnerLabel.translatesAutoresizingMaskIntoConstraints = false
         winnerLabel.textAlignment = .right
+        winnerLabel.textColor = Colors.subGray
                 
         NSLayoutConstraint.activate([
             winnerLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -60,6 +59,8 @@ class CoefficientButton: UIButton {
         
         coefficientLabel.translatesAutoresizingMaskIntoConstraints = false
         coefficientLabel.textAlignment = .left
+        coefficientLabel.textColor = Colors.subGray
+        coefficientLabel.font = Fonts.pmFont
         
         NSLayoutConstraint.activate([
             coefficientLabel.leadingAnchor.constraint(equalTo: centerXAnchor, constant: 8),

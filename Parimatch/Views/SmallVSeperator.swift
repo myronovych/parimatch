@@ -1,5 +1,5 @@
 //
-//  MatchCard.swift
+//  SmallVSeperator.swift
 //  Parimatch
 //
 //  Created by rs on 04.08.2020.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class MatchCard: UIView {
 
+class SmallVSeperator: UIView {
     override init(frame: CGRect) {
-        super.init(frame: .zero)
+        super.init(frame: frame)
         configure()
     }
     
@@ -20,9 +20,11 @@ class MatchCard: UIView {
     }
     
     private func configure() {
-        translatesAutoresizingMaskIntoConstraints = false
-
-        backgroundColor = Colors.mainGray
-        layer.cornerRadius = 20
+        backgroundColor = .black
+        
+        NSLayoutConstraint.activate([
+            heightAnchor.constraint(equalToConstant: 16),
+            widthAnchor.constraint(equalToConstant: 2)
+        ])
     }
 }

@@ -22,7 +22,7 @@ class TitleLabel: UILabel {
     convenience init(alignment: NSTextAlignment, fontSize: CGFloat) {
         self.init(frame: .zero)
         textAlignment = alignment
-        self.font = UIFont.systemFont(ofSize: fontSize, weight: .bold)
+        self.font = Fonts.pmFont
     }
     
     private func configure() {
@@ -30,5 +30,7 @@ class TitleLabel: UILabel {
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.8
         lineBreakMode = .byTruncatingTail
+        font = Fonts.pmFont
+        textColor = Colors.mainYellow
     }
 }
