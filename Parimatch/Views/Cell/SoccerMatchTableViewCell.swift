@@ -33,11 +33,6 @@ class SoccerMatchTableViewCell: SoccerMainTableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setSoccerMatch(_ match: SoccerMatch) {
-        soccerMatch = match
-        setLabels(match)
-    }
-    
     // MARK: - layout
     
     private func configureContainersSubviews() {
@@ -74,21 +69,9 @@ class SoccerMatchTableViewCell: SoccerMainTableViewCell {
         betDelegate.didSelectBet(soccerMatch: soccerMatch, sender: sender)
     }
     
-    private func setLabels(_ match: SoccerMatch) {
-        sportNiceLabel.text = match.sportNice
-        firstTeamLabel.text = match.homeTeam
-        secondTeamLabel.text = match.teams.first(where: {$0 != match.homeTeam})
-        
-        setTimeDateLabels(match)
+    override internal func setLabels(_ match: SoccerMatch) {
+        super.setLabels(match)
         setButtonsCoeffsLabels(match)
-    }
-    
-    private func setTimeDateLabels(_ match: SoccerMatch) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d MMM"
-        dateLabel.text = dateFormatter.string(from: match.commenceTime)
-        dateFormatter.dateFormat = "HH:MM"
-        timeLabel.text = dateFormatter.string(from: match.commenceTime)
     }
     
     private func setButtonsCoeffsLabels(_ match: SoccerMatch) {

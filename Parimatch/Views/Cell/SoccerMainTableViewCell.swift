@@ -37,6 +37,27 @@ class SoccerMainTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    internal func setLabels(_ match: SoccerMatch) {
+        sportNiceLabel.text = match.sportNice
+        firstTeamLabel.text = match.homeTeam
+        secondTeamLabel.text = match.teams.first(where: {$0 != match.homeTeam})
+        
+        setTimeDateLabels(match)
+    }
+    
+    func setSoccerMatch(_ match: SoccerMatch) {
+        soccerMatch = match
+        setLabels(match)
+    }
+    
+    private func setTimeDateLabels(_ match: SoccerMatch) {
+           let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "d MMM"
+           dateLabel.text = dateFormatter.string(from: match.commenceTime)
+           dateFormatter.dateFormat = "HH:MM"
+           timeLabel.text = dateFormatter.string(from: match.commenceTime)
+       }
+    
     private func configureContainerView() {
         addSubview(containerView)
         

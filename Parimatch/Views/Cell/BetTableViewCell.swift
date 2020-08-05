@@ -8,17 +8,15 @@
 
 import UIKit
 
-class BetTableViewCell: UITableViewCell {
+class BetTableViewCell: SoccerMainTableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    static let reuseIdentifier = "betCell"
+    private var betOption: SoccerBetOption!
+    private var coefficient: Double!
+    
+    func setSoccerBet(bet: SoccerBet) {
+        setSoccerMatch(bet.soccerMatch)
+        betOption = bet.betOption
+        coefficient = bet.coefficient
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
