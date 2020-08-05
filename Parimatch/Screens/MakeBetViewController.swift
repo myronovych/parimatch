@@ -21,6 +21,12 @@ class MakeBetViewController: UIViewController {
     let guestTeamBackground = UIImageView(image: UIImage(named: "guestTeamBackground"))
     let guestTeamLabel = UILabel()
     
+    let resultLabel = TitleLabel()
+    let coefficientLabel = TitleLabel()
+    
+    let possibleWinLabel = UILabel()
+    let possibleAmountLabel = UILabel()
+    
     let enterAmountView = AmountTextField()
     
     let placeBetButton = PlaceBetButton()
@@ -53,6 +59,8 @@ class MakeBetViewController: UIViewController {
         configureGuestTeam()
         configureButton()
         configureEnterAmount()
+        configurePossibleWin()
+        configureResultCoeffLabels()
     }
     
     private func setLabels() {
@@ -179,6 +187,9 @@ class MakeBetViewController: UIViewController {
         view.addSubview(enterAmountView)
         enterAmountView.translatesAutoresizingMaskIntoConstraints = false
         
+        enterAmountView.amountField.delegate = self
+        enterAmountView.amountField.addTarget(self, action: #selector(changedAmount(_:)), for: .editingChanged)
+        
         NSLayoutConstraint.activate([
             enterAmountView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             enterAmountView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
@@ -187,5 +198,67 @@ class MakeBetViewController: UIViewController {
         ])
     }
     
+    @objc func changedAmount(_ textField: UITextField) {
+        if textField.text!.isEmpty {
+            possibleAmountLabel.text = String(bet.coefficient * 0.0) + " UAH "
+            return
+        }
+        possibleAmountLabel.text = String(bet.coefficient * Double(textField.text ?? "0")!) + " UAH "
+    }
     
+    private func configurePossibleWin() {
+        view.addSubviews(possibleWinLabel, possibleAmountLabel)
+        
+        possibleWinLabel.text = "Possible win: "
+        possibleWinLabel.font = Fonts.pmFont
+        possibleWinLabel.textColor = Colors.mainYellow
+        
+        possibleAmountLabel.text = String(format: "%.2f",bet.coefficient * Double(enterAmountView.amountField.text!)!) + " UAH "
+        possibleAmountLabel.font = Fonts.pmFont
+        possibleAmountLabel.textColor = Colors.mainYellow
+        
+        NSLayoutConstraint.activate([
+            possibleWinLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            possibleWinLabel.bottomAnchor.constraint(equalTo: enterAmountView.topAnchor, constant: -padding),
+            
+            possibleAmountLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            possibleAmountLabel.bottomAnchor.constraint(equalTo: possibleWinLabel.bottomAnchor)
+            
+        ])
+    }
+    
+    private func configureResultCoeffLabels() {
+        view.addSubviews(resultLabel, coefficientLabel)
+        
+        var expectedWinner = bet.soccerMatch.homeTeam
+        
+        if bet.betOption == SoccerBetOption.X {
+            expectedWinner = "Draw"
+        } else if bet.betOption == SoccerBetOption.W2 {
+            expectedWinner = guestTeamLabel.text!
+        }
+        
+        resultLabel.text = expectedWinner
+        
+        coefficientLabel.text = String(bet.coefficient)
+        coefficientLabel.textAlignment = .right
+        
+        NSLayoutConstraint.activate([
+            resultLabel.bottomAnchor.constraint(equalTo: possibleWinLabel.topAnchor, constant: -padding),
+            resultLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            
+            coefficientLabel.bottomAnchor.constraint(equalTo: resultLabel.bottomAnchor),
+            coefficientLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding)
+        ])
+    }
+    
+}
+
+extension MakeBetViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+    {
+      let allowedCharacters = CharacterSet.decimalDigits
+      let characterSet = CharacterSet(charactersIn: string)
+      return allowedCharacters.isSuperset(of: characterSet)
+    }
 }

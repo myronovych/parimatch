@@ -70,6 +70,7 @@ class AmountTextField: UIView {
         amountField.textColor = Colors.mainGray
         amountField.textAlignment = .right
         amountField.text = "100"
+        amountField.keyboardType = .numberPad
         
         NSLayoutConstraint.activate([
             amountField.leadingAnchor.constraint(equalTo: enterAmountLabel.trailingAnchor, constant: padding),
