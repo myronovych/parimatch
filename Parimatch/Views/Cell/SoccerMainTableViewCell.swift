@@ -1,23 +1,16 @@
 //
-//  SoccerTableViewCell.swift
+//  SoccerMainTableViewCell.swift
 //  Parimatch
 //
-//  Created by rs on 02.08.2020.
+//  Created by rs on 05.08.2020.
 //  Copyright © 2020 Oleksandr Myronovych. All rights reserved.
 //
 
 import UIKit
 
-protocol MatchBetDelegate {
-    func didSelectBet(soccerMatch: SoccerMatch, sender: CoefficientButton)
-}
+class SoccerMainTableViewCell: UITableViewCell {
 
-class SoccerTableViewCell: UITableViewCell {
-    
-    static let reuseIdentifier = "soccerMatchCell"
-    
-    private var soccerMatch: SoccerMatch!
-    var betDelegate: MatchBetDelegate!
+    var soccerMatch: SoccerMatch!
     
     let containerView = MatchCard()
     let bigHSeperator = UIView()
@@ -27,11 +20,6 @@ class SoccerTableViewCell: UITableViewCell {
     let hstackTeams = UIStackView()
     let firstTeamLabel = TitleLabel(alignment: .center, fontSize: 15)
     let secondTeamLabel = TitleLabel(alignment: .center, fontSize: 15)
-    
-    let hstackCoeffs = UIStackView()
-    let firstWinnerButton = CoefficientButton(betOption: SoccerBetOption.W1)
-    let drawButton = CoefficientButton(betOption: SoccerBetOption.X)
-    let secondWinnerButton = CoefficientButton(betOption: SoccerBetOption.W2)
     
     let vstackTime = UIStackView()
     let dateLabel = UILabel()
@@ -49,13 +37,6 @@ class SoccerTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setSoccerMatch(_ match: SoccerMatch) {
-        self.soccerMatch = match
-        setLabels(match)
-    }
-    
-    // MARK: - layout
-    
     private func configureContainerView() {
         addSubview(containerView)
         
@@ -70,12 +51,11 @@ class SoccerTableViewCell: UITableViewCell {
     }
     
     private func configureContainersSubviews() {
-        containerView.addSubviews(sportNiceLabel, hstackTeams, hstackCoeffs, bigHSeperator, vstackTime)
+        containerView.addSubviews(sportNiceLabel, hstackTeams, bigHSeperator, vstackTime)
         
         configureSportNiceLabel()
         configureHStackTeams()
         configureBigHSeperator()
-        configureHStackCoeffs()
         configureVStackTime()
     }
     
@@ -111,36 +91,6 @@ class SoccerTableViewCell: UITableViewCell {
         dateLabel.textColor = Colors.subGray
     }
     
-    private func configureHStackCoeffs() {
-        hstackCoeffs.axis = .horizontal
-        hstackCoeffs.distribution = .equalSpacing
-        hstackCoeffs.alignment = .center
-        hstackCoeffs.spacing = 5
-        
-        let buttons = [firstWinnerButton, drawButton, secondWinnerButton]
-        
-        for (index, button) in buttons.enumerated() {
-            hstackCoeffs.addArrangedSubview(button)
-            if index != buttons.count - 1 {
-                hstackCoeffs.addArrangedSubview(SmallVSeperator())
-            }
-            button.addTarget(self, action: #selector(self.coeffPressed(_:)), for: .touchUpInside)
-        }
-        
-        NSLayoutConstraint.activate([
-            hstackCoeffs.topAnchor.constraint(equalTo: bigHSeperator.bottomAnchor, constant: 5),
-            hstackCoeffs.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10),
-            hstackCoeffs.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10),
-            hstackCoeffs.heightAnchor.constraint(equalToConstant: 50),
-        ])
-    }
-    
-    @objc func coeffPressed(_ sender: CoefficientButton!) {
-        betDelegate.didSelectBet(soccerMatch: soccerMatch, sender: sender)
-    }
-    
-    
-    
     private func configureBigHSeperator() {
         bigHSeperator.backgroundColor = .black
         
@@ -151,9 +101,7 @@ class SoccerTableViewCell: UITableViewCell {
             bigHSeperator.topAnchor.constraint(equalTo: hstackTeams.bottomAnchor, constant: 10)
         ])
     }
-    
-    
-    
+        
     private func configureSportNiceLabel() {
         sportNiceLabel.font = Fonts.pmFont?.withSize(20)
         sportNiceLabel.textColor = Colors.subGray
@@ -176,32 +124,5 @@ class SoccerTableViewCell: UITableViewCell {
             bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 8)
         ])
     }
-    
-    private func setLabels(_ match: SoccerMatch) {
-        sportNiceLabel.text = match.sportNice
-        firstTeamLabel.text = match.homeTeam
-        secondTeamLabel.text = match.teams.first(where: {$0 != match.homeTeam})
-        
-        setTimeDateLabels(match)
-        setButtonsCoeffsLabels(match)
-    }
-    
-    private func setTimeDateLabels(_ match: SoccerMatch) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d MMM"
-        dateLabel.text = dateFormatter.string(from: match.commenceTime)
-        dateFormatter.dateFormat = "HH:MM"
-        timeLabel.text = dateFormatter.string(from: match.commenceTime)
-    }
-    
-    private func setButtonsCoeffsLabels(_ match: SoccerMatch) {
-        let firstTeamCoff = match.sites[0].odds["h2h"]?[0] ?? 1
-        firstWinnerButton.setCoefficient(coefficient: firstTeamCoff)
-        
-        let drawCoff = match.sites[0].odds["h2h"]?[2] ?? 1
-        drawButton.setCoefficient(coefficient: drawCoff)
-        
-        let secondTeamCoff = match.sites[0].odds["h2h"]?[1] ?? 1
-        secondWinnerButton.setCoefficient(coefficient: secondTeamCoff)
-    }
+
 }

@@ -21,10 +21,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="U0E-Ft-Nbh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="1qu-Fc-yPl"/>
-                            <constraint firstItem="U0E-Ft-Nbh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="9yK-4O-o9k"/>
-                            <constraint firstItem="U0E-Ft-Nbh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="340" id="Agz-o3-jwZ"/>
-                            <constraint firstItem="U0E-Ft-Nbh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="Dgl-lp-db8"/>
+                            <constraint firstItem="U0E-Ft-Nbh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Eu5-kW-l9G"/>
+                            <constraint firstItem="U0E-Ft-Nbh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="Mfd-zS-Oaa"/>
+                            <constraint firstItem="U0E-Ft-Nbh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="QRI-ms-iqv"/>
+                            <constraint firstItem="U0E-Ft-Nbh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="340" id="oqt-GV-9wv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
