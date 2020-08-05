@@ -46,7 +46,7 @@ class SoccerViewController: UIViewController {
     
     private func configureTableView() {
         view.addSubview(tableView)
-        tableView.register(SoccerTableViewCell.self, forCellReuseIdentifier: SoccerTableViewCell.reuseIdentifier)
+        tableView.register(SoccerMatchTableViewCell.self, forCellReuseIdentifier: SoccerMatchTableViewCell.reuseIdentifier)
         
         tableView.frame = view.bounds
         tableView.separatorStyle = .none
@@ -64,7 +64,7 @@ extension SoccerViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = SoccerTableViewCell(style: .default, reuseIdentifier: SoccerTableViewCell.reuseIdentifier)
+        let cell = SoccerMatchTableViewCell(style: .default, reuseIdentifier: SoccerMatchTableViewCell.reuseIdentifier)
         cell.setSoccerMatch(matches[indexPath.row])
         cell.betDelegate = self
         
