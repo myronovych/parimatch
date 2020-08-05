@@ -84,7 +84,7 @@ extension SoccerViewController: MatchBetDelegate {
         }
         
         selectedButton = sender
-        selectedBet = SoccerBet(soccerMatch: soccerMatch, betOption: sender.betOption, coefficient: Double(sender.coefficientLabel.text ?? "1.0")!)
+        selectedBet = SoccerBet(soccerMatch: soccerMatch, betOption: sender.betOption, coefficient: Double(sender.coefficientLabel.text ?? "1.0")!, sum: 100)
         selectedButton!.winnerLabel.textColor = .cyan
         selectedButton!.coefficientLabel.textColor = .cyan
     }

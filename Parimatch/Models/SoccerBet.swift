@@ -12,4 +12,5 @@ struct SoccerBet {
     let soccerMatch: SoccerMatch
     let betOption: SoccerBetOption
     let coefficient: Double
+    let sum: Int
 }

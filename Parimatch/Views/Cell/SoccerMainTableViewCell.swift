@@ -25,9 +25,12 @@ class SoccerMainTableViewCell: UITableViewCell {
     let dateLabel = UILabel()
     let timeLabel = UILabel()
     
+    var cardHeight: CGFloat {
+        get { return 170 }
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         configureContainerView()
         configureCell()
         configureContainersSubviews()
@@ -67,7 +70,7 @@ class SoccerMainTableViewCell: UITableViewCell {
             containerView.topAnchor.constraint(equalTo: topAnchor, constant: padding),
             containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
-            containerView.heightAnchor.constraint(equalToConstant: 170)
+            containerView.heightAnchor.constraint(equalToConstant: cardHeight)
         ])
     }
     
