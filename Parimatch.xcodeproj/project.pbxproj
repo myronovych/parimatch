@@ -14,7 +14,7 @@
 		5323211F24D5E0DA007EC6EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5323211E24D5E0DA007EC6EB /* Assets.xcassets */; };
 		5323212224D5E0DA007EC6EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5323212024D5E0DA007EC6EB /* LaunchScreen.storyboard */; };
 		5323214A24D694B9007EC6EB /* PMTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323214924D694B9007EC6EB /* PMTabBarController.swift */; };
-		5323214D24D6A05A007EC6EB /* BasketballViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323214C24D6A05A007EC6EB /* BasketballViewController.swift */; };
+		5323214D24D6A05A007EC6EB /* BetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323214C24D6A05A007EC6EB /* BetsViewController.swift */; };
 		5323215324D6B436007EC6EB /* SoccerMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323215224D6B436007EC6EB /* SoccerMatch.swift */; };
 		5323215624D6B828007EC6EB /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323215524D6B828007EC6EB /* Site.swift */; };
 		5323215824D6B965007EC6EB /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323215724D6B965007EC6EB /* Api.swift */; };
@@ -49,7 +49,7 @@
 		5323212124D5E0DA007EC6EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5323212324D5E0DA007EC6EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5323214924D694B9007EC6EB /* PMTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMTabBarController.swift; sourceTree = "<group>"; };
-		5323214C24D6A05A007EC6EB /* BasketballViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballViewController.swift; sourceTree = "<group>"; };
+		5323214C24D6A05A007EC6EB /* BetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsViewController.swift; sourceTree = "<group>"; };
 		5323215224D6B436007EC6EB /* SoccerMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerMatch.swift; sourceTree = "<group>"; };
 		5323215524D6B828007EC6EB /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
 		5323215724D6B965007EC6EB /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				5323211924D5E0D4007EC6EB /* SoccerViewController.swift */,
-				5323214C24D6A05A007EC6EB /* BasketballViewController.swift */,
+				5323214C24D6A05A007EC6EB /* BetsViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -158,7 +158,6 @@
 				5323215F24D6FFBF007EC6EB /* Labels */,
 				5323215E24D6FF7E007EC6EB /* Cell */,
 				5323215024D6B1D9007EC6EB /* TabBars */,
-				5323217824D9C061007EC6EB /* SmallVSeperator.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,6 +227,7 @@
 		5323216C24D9AE3C007EC6EB /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				5323217824D9C061007EC6EB /* SmallVSeperator.swift */,
 				5323216D24D9AE6D007EC6EB /* MatchCard.swift */,
 			);
 			path = CustomViews;
@@ -391,7 +391,7 @@
 				5323215A24D6BE79007EC6EB /* SoccerTableViewCell.swift in Sources */,
 				5323211A24D5E0D4007EC6EB /* SoccerViewController.swift in Sources */,
 				5323211624D5E0D4007EC6EB /* AppDelegate.swift in Sources */,
-				5323214D24D6A05A007EC6EB /* BasketballViewController.swift in Sources */,
+				5323214D24D6A05A007EC6EB /* BetsViewController.swift in Sources */,
 				5323215824D6B965007EC6EB /* Api.swift in Sources */,
 				5323216824D98510007EC6EB /* SoccerBet.swift in Sources */,
 				5323217924D9C061007EC6EB /* SmallVSeperator.swift in Sources */,

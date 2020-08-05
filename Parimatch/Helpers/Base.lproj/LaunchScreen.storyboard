@@ -14,7 +14,18 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rombs-CMYK" translatesAutoresizingMaskIntoConstraints="NO" id="U0E-Ft-Nbh">
+                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="U0E-Ft-Nbh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="1qu-Fc-yPl"/>
+                            <constraint firstItem="U0E-Ft-Nbh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="9yK-4O-o9k"/>
+                            <constraint firstItem="U0E-Ft-Nbh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="340" id="Agz-o3-jwZ"/>
+                            <constraint firstItem="U0E-Ft-Nbh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="Dgl-lp-db8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -23,4 +34,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Rombs-CMYK" width="366" height="379"/>
+    </resources>
 </document>

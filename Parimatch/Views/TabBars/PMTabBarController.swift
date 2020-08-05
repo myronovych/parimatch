@@ -16,7 +16,7 @@ class PMTabBarController: UITabBarController {
         UITabBar.appearance().tintColor = .black
         UITabBar.appearance().barTintColor = Colors.mainYellow
         
-        viewControllers = [configureSoccerVC(), configureBasketballVC()]
+        viewControllers = [configureSoccerVC(), configureBetsVC()]
     }
     
     func configureSoccerVC() -> UINavigationController {
@@ -26,10 +26,10 @@ class PMTabBarController: UITabBarController {
         return UINavigationController(rootViewController: soccerVC)
     }
     
-    func configureBasketballVC() -> UINavigationController {
-        let basketballVC = BasketballViewController()
-        basketballVC.tabBarItem = UITabBarItem(title: "Basketball", image: UIImage(named: "basketballLogo"), tag: 1)
+    func configureBetsVC() -> UINavigationController {
+        let betsVC = BetsViewController()
+        betsVC.tabBarItem = UITabBarItem(title: "My bets", image: UIImage(named: "bet"), tag: 1)
         
-        return UINavigationController(rootViewController: basketballVC)
+        return UINavigationController(rootViewController: betsVC)
     }
 }
