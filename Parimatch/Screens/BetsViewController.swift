@@ -10,6 +10,8 @@ import UIKit
 
 class BetsViewController: UIViewController {
     
+    let tableView = UITableView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "My bets"

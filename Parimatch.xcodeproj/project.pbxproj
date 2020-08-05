@@ -18,7 +18,7 @@
 		5323215324D6B436007EC6EB /* SoccerMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323215224D6B436007EC6EB /* SoccerMatch.swift */; };
 		5323215624D6B828007EC6EB /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323215524D6B828007EC6EB /* Site.swift */; };
 		5323215824D6B965007EC6EB /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323215724D6B965007EC6EB /* Api.swift */; };
-		5323215A24D6BE79007EC6EB /* SoccerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323215924D6BE79007EC6EB /* SoccerTableViewCell.swift */; };
+		5323215A24D6BE79007EC6EB /* SoccerMatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323215924D6BE79007EC6EB /* SoccerMatchTableViewCell.swift */; };
 		5323215D24D6D241007EC6EB /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323215C24D6D241007EC6EB /* UIView+Ext.swift */; };
 		5323216124D7E5B9007EC6EB /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323216024D7E5B9007EC6EB /* TitleLabel.swift */; };
 		5323216424D7F8A7007EC6EB /* CoefficientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323216324D7F8A6007EC6EB /* CoefficientButton.swift */; };
@@ -37,6 +37,8 @@
 		5323218324D9D23B007EC6EB /* Parimatch-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5323217E24D9D23B007EC6EB /* Parimatch-Regular.otf */; };
 		5330673324D9EA7E00577B0C /* Gilroy-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5330673124D9EA5B00577B0C /* Gilroy-ExtraBold.otf */; };
 		5330673424D9EA7E00577B0C /* Gilroy-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5330673224D9EA5B00577B0C /* Gilroy-Regular.otf */; };
+		5330673624DA7A8F00577B0C /* BetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5330673524DA7A8F00577B0C /* BetTableViewCell.swift */; };
+		5330673824DA7B7000577B0C /* SoccerMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5330673724DA7B7000577B0C /* SoccerMainTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +55,7 @@
 		5323215224D6B436007EC6EB /* SoccerMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerMatch.swift; sourceTree = "<group>"; };
 		5323215524D6B828007EC6EB /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
 		5323215724D6B965007EC6EB /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
-		5323215924D6BE79007EC6EB /* SoccerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerTableViewCell.swift; sourceTree = "<group>"; };
+		5323215924D6BE79007EC6EB /* SoccerMatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerMatchTableViewCell.swift; sourceTree = "<group>"; };
 		5323215C24D6D241007EC6EB /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		5323216024D7E5B9007EC6EB /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		5323216324D7F8A6007EC6EB /* CoefficientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoefficientButton.swift; sourceTree = "<group>"; };
@@ -72,6 +74,8 @@
 		5323217E24D9D23B007EC6EB /* Parimatch-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Parimatch-Regular.otf"; sourceTree = "<group>"; };
 		5330673124D9EA5B00577B0C /* Gilroy-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ExtraBold.otf"; sourceTree = "<group>"; };
 		5330673224D9EA5B00577B0C /* Gilroy-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.otf"; sourceTree = "<group>"; };
+		5330673524DA7A8F00577B0C /* BetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetTableViewCell.swift; sourceTree = "<group>"; };
+		5330673724DA7B7000577B0C /* SoccerMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerMainTableViewCell.swift; sourceTree = "<group>"; };
 		B1E544AEE2D7010BB85F772A /* Pods-Parimatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parimatch.debug.xcconfig"; path = "Target Support Files/Pods-Parimatch/Pods-Parimatch.debug.xcconfig"; sourceTree = "<group>"; };
 		D067B5766A8877696E168CF8 /* Pods_Parimatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parimatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -144,8 +148,8 @@
 			children = (
 				5323211524D5E0D4007EC6EB /* AppDelegate.swift */,
 				5323211724D5E0D4007EC6EB /* SceneDelegate.swift */,
-				5323211E24D5E0DA007EC6EB /* Assets.xcassets */,
 				5323212024D5E0DA007EC6EB /* LaunchScreen.storyboard */,
+				5323211E24D5E0DA007EC6EB /* Assets.xcassets */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -203,7 +207,9 @@
 		5323215E24D6FF7E007EC6EB /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				5323215924D6BE79007EC6EB /* SoccerTableViewCell.swift */,
+				5323215924D6BE79007EC6EB /* SoccerMatchTableViewCell.swift */,
+				5330673524DA7A8F00577B0C /* BetTableViewCell.swift */,
+				5330673724DA7B7000577B0C /* SoccerMainTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -381,6 +387,7 @@
 				5323215624D6B828007EC6EB /* Site.swift in Sources */,
 				5323216E24D9AE6D007EC6EB /* MatchCard.swift in Sources */,
 				5323216424D7F8A7007EC6EB /* CoefficientButton.swift in Sources */,
+				5330673824DA7B7000577B0C /* SoccerMainTableViewCell.swift in Sources */,
 				5323214A24D694B9007EC6EB /* PMTabBarController.swift in Sources */,
 				5323215D24D6D241007EC6EB /* UIView+Ext.swift in Sources */,
 				5323215324D6B436007EC6EB /* SoccerMatch.swift in Sources */,
@@ -388,11 +395,12 @@
 				5323216B24D99C32007EC6EB /* SoccerMatches.swift in Sources */,
 				5323216624D98077007EC6EB /* SoccerBetOption.swift in Sources */,
 				5323216124D7E5B9007EC6EB /* TitleLabel.swift in Sources */,
-				5323215A24D6BE79007EC6EB /* SoccerTableViewCell.swift in Sources */,
+				5323215A24D6BE79007EC6EB /* SoccerMatchTableViewCell.swift in Sources */,
 				5323211A24D5E0D4007EC6EB /* SoccerViewController.swift in Sources */,
 				5323211624D5E0D4007EC6EB /* AppDelegate.swift in Sources */,
 				5323214D24D6A05A007EC6EB /* BetsViewController.swift in Sources */,
 				5323215824D6B965007EC6EB /* Api.swift in Sources */,
+				5330673624DA7A8F00577B0C /* BetTableViewCell.swift in Sources */,
 				5323216824D98510007EC6EB /* SoccerBet.swift in Sources */,
 				5323217924D9C061007EC6EB /* SmallVSeperator.swift in Sources */,
 				5323211824D5E0D4007EC6EB /* SceneDelegate.swift in Sources */,
