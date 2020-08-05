@@ -107,6 +107,7 @@ class BetTableViewCell: SoccerMainTableViewCell {
     private func configureYourBetLabel() {
         addSubview(yourBetLabel)
         yourBetLabel.translatesAutoresizingMaskIntoConstraints = false
+        yourBetLabel.textColor = Colors.subGray
         
         NSLayoutConstraint.activate([
             yourBetLabel.topAnchor.constraint(equalTo: betLabel.bottomAnchor, constant: padding),
@@ -135,6 +136,7 @@ class BetTableViewCell: SoccerMainTableViewCell {
     private func configurePossibleWinLabel() {
         addSubview(possibleWinLabel)
         possibleWinLabel.translatesAutoresizingMaskIntoConstraints = false
+        possibleWinLabel.textColor = Colors.subGray
         
         NSLayoutConstraint.activate([
             possibleWinLabel.topAnchor.constraint(equalTo: yourBetLabel.bottomAnchor, constant: padding),

@@ -54,11 +54,8 @@ class SoccerMainTableViewCell: UITableViewCell {
     }
     
     private func setTimeDateLabels(_ match: SoccerMatch) {
-           let dateFormatter = DateFormatter()
-           dateFormatter.dateFormat = "d MMM"
-           dateLabel.text = dateFormatter.string(from: match.commenceTime)
-           dateFormatter.dateFormat = "HH:MM"
-           timeLabel.text = dateFormatter.string(from: match.commenceTime)
+        dateLabel.text = match.commenceTime.getStringDate()
+        timeLabel.text = match.commenceTime.getStringTime()
        }
     
     private func configureContainerView() {
@@ -84,9 +81,9 @@ class SoccerMainTableViewCell: UITableViewCell {
     }
     
     private func configureHStackTeams() {
-        hstackTeams.addArrangedSubview(secondTeamLabel)
-        hstackTeams.addArrangedSubview(vstackTime)
         hstackTeams.addArrangedSubview(firstTeamLabel)
+        hstackTeams.addArrangedSubview(vstackTime)
+        hstackTeams.addArrangedSubview(secondTeamLabel)
         
         hstackTeams.axis = .horizontal
         hstackTeams.distribution = .fillEqually

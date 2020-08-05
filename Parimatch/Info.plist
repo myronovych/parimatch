@@ -22,6 +22,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Parimatch-Bold.otf</string>
 		<string>Gilroy-ExtraBold.otf</string>
 		<string>Parimatch-Medium.otf</string>
 		<string>Gilroy-Regular.otf</string>

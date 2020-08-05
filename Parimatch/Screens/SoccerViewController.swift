@@ -64,7 +64,7 @@ extension SoccerViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = SoccerMatchTableViewCell(style: .default, reuseIdentifier: SoccerMatchTableViewCell.reuseIdentifier)
+        let cell = tableView.dequeueReusableCell(withIdentifier: SoccerMatchTableViewCell.reuseIdentifier) as! SoccerMatchTableViewCell
         cell.setSoccerMatch(matches[indexPath.row])
         cell.betDelegate = self
         
@@ -75,18 +75,23 @@ extension SoccerViewController: UITableViewDataSource, UITableViewDelegate {
 extension SoccerViewController: MatchBetDelegate {
     
     func didSelectBet(soccerMatch: SoccerMatch, sender: CoefficientButton) {
-        if let selectedButton = selectedButton {
-            selectedButton.winnerLabel.textColor = Colors.subGray
-            selectedButton.coefficientLabel.textColor = Colors.subGray
-            selectedBet = nil
-            self.selectedButton = nil
-            if selectedButton == sender { return }
-        }
+//        if let selectedButton = selectedButton {
+//            selectedButton.winnerLabel.textColor = Colors.subGray
+//            selectedButton.coefficientLabel.textColor = Colors.subGray
+//            selectedBet = nil
+//            self.selectedButton = nil
+//            if selectedButton == sender { return }
+//        }
+//
+//        selectedButton = sender
+//        selectedBet = SoccerBet(soccerMatch: soccerMatch, betOption: sender.betOption, coefficient: Double(sender.coefficientLabel.text ?? "1.0")!, sum: 100)
+//        selectedButton!.winnerLabel.textColor = .cyan
+//        selectedButton!.coefficientLabel.textColor = .cyan
+        let makeBetVC = MakeBetViewController()
+        makeBetVC.bet = SoccerBet(soccerMatch: soccerMatch, betOption: sender.betOption, coefficient: Double(sender.coefficientLabel.text!)!, sum: 100)
         
-        selectedButton = sender
-        selectedBet = SoccerBet(soccerMatch: soccerMatch, betOption: sender.betOption, coefficient: Double(sender.coefficientLabel.text ?? "1.0")!, sum: 100)
-        selectedButton!.winnerLabel.textColor = .cyan
-        selectedButton!.coefficientLabel.textColor = .cyan
+        let destVC = UINavigationController(rootViewController: makeBetVC)
+        present(destVC, animated: true)
     }
 }
 
