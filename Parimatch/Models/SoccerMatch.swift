@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SoccerMatch: Decodable {
+struct SoccerMatch: Codable {
     let sportNice: String
     let teams: [String]
     let commenceTime: Date

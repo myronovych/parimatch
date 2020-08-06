@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Site: Decodable {
+struct Site: Codable {
     let siteKey: String
     let siteNice: String
     let odds: [String: [Double]]

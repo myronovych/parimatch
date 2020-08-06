@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum SoccerBetOption: String {
+enum SoccerBetOption: String, Codable {
     case W1
     case X
     case W2

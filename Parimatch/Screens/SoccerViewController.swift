@@ -75,18 +75,6 @@ extension SoccerViewController: UITableViewDataSource, UITableViewDelegate {
 extension SoccerViewController: MatchBetDelegate {
     
     func didSelectBet(soccerMatch: SoccerMatch, sender: CoefficientButton) {
-//        if let selectedButton = selectedButton {
-//            selectedButton.winnerLabel.textColor = Colors.subGray
-//            selectedButton.coefficientLabel.textColor = Colors.subGray
-//            selectedBet = nil
-//            self.selectedButton = nil
-//            if selectedButton == sender { return }
-//        }
-//
-//        selectedButton = sender
-//        selectedBet = SoccerBet(soccerMatch: soccerMatch, betOption: sender.betOption, coefficient: Double(sender.coefficientLabel.text ?? "1.0")!, sum: 100)
-//        selectedButton!.winnerLabel.textColor = .cyan
-//        selectedButton!.coefficientLabel.textColor = .cyan
         let makeBetVC = MakeBetViewController()
         makeBetVC.bet = SoccerBet(soccerMatch: soccerMatch, betOption: sender.betOption, coefficient: Double(sender.coefficientLabel.text!)!, sum: 100)
         

@@ -175,12 +175,39 @@ class MakeBetViewController: UIViewController {
     
     private func configureButton() {
         view.addSubview(placeBetButton)
-        
+        placeBetButton.addTarget(self, action: #selector(placeBet), for: .touchUpInside)
         NSLayoutConstraint.activate([
             placeBetButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             placeBetButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             placeBetButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -padding)
         ])
+    }
+    
+    @objc func placeBet() {
+        let defaults = UserDefaults.standard
+        var myBets = [SoccerBet]()
+        if let myBetsData = defaults.object(forKey: "bets") as? Data {
+            do {
+                let decoder = JSONDecoder()
+                myBets = try decoder.decode([SoccerBet].self, from: myBetsData)
+            } catch {
+                print("Error occured while fetching bets from UserDefaults")
+            }
+        }
+        
+        guard let amount = enterAmountView.amountField.text, !amount.isEmpty else {
+            return
+        }
+        myBets.append(SoccerBet(soccerMatch: bet.soccerMatch, betOption: bet.betOption, coefficient: bet.coefficient, sum: Int(amount)!))
+        
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(myBets)
+            defaults.set(data, forKey: "bets")
+        } catch {
+            print("Error occured while saving bet to UserDefaults")
+        }
+        dismissVC()
     }
     
     private func configureEnterAmount() {
@@ -257,8 +284,8 @@ class MakeBetViewController: UIViewController {
 extension MakeBetViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     {
-      let allowedCharacters = CharacterSet.decimalDigits
-      let characterSet = CharacterSet(charactersIn: string)
-      return allowedCharacters.isSuperset(of: characterSet)
+        let allowedCharacters = CharacterSet.decimalDigits
+        let characterSet = CharacterSet(charactersIn: string)
+        return allowedCharacters.isSuperset(of: characterSet)
     }
 }

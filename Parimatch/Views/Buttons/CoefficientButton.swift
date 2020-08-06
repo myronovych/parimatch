@@ -60,6 +60,8 @@ class CoefficientButton: UIButton {
         
         coefficientLabel.translatesAutoresizingMaskIntoConstraints = false
         coefficientLabel.textAlignment = .left
+        coefficientLabel.adjustsFontSizeToFitWidth = true
+        coefficientLabel.minimumScaleFactor = 0.6
         coefficientLabel.textColor = Colors.subGray
         coefficientLabel.font = Fonts.pmFont
         

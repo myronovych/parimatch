@@ -12,7 +12,7 @@ class BetsViewController: UIViewController {
     
     let tableView = UITableView()
     
-    var bets = [soccerBet1]
+    var bets = [SoccerBet]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,27 @@ class BetsViewController: UIViewController {
         
         configureColors()
         configureTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchBets()
+        tableView.reloadData()
+    }
+    
+    private func fetchBets() {
+        let defaults = UserDefaults.standard
+        
+        guard let betsData = defaults.object(forKey: "bets") as? Data else {
+            return
+        }
+        
+        do {
+            let decoder = JSONDecoder()
+            bets = try decoder.decode([SoccerBet].self, from: betsData)
+        } catch {
+            print("Error occured while fetching.")
+        }
         
     }
     
@@ -54,6 +75,7 @@ extension BetsViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
+    
 }
 
 let soccerBet1 = SoccerBet(soccerMatch: match1, betOption: SoccerBetOption.W1, coefficient: 2.0, sum: 100)

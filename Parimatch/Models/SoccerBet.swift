@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct SoccerBet {
+struct SoccerBet: Codable {
+    let id = UUID().uuidString
     let soccerMatch: SoccerMatch
     let betOption: SoccerBetOption
     let coefficient: Double
