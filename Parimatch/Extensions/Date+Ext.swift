@@ -12,7 +12,7 @@ import Foundation
 extension Date {
     func getStringTime() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:MM"
+        dateFormatter.dateFormat = "HH:mm"
         return dateFormatter.string(from: self)
     }
     

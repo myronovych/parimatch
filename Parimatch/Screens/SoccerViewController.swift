@@ -28,7 +28,9 @@ class SoccerViewController: UIViewController {
     
     private func fetchSoccerMatches() {
         let request = AF.request("https://api.the-odds-api.com/v3/odds/?apiKey=\(Api.apiKey)&sport=soccer&region=eu&mkt=h2h")
-        request.responseDecodable(of: SoccerMatches.self) { response in
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .secondsSince1970
+        request.responseDecodable(of: SoccerMatches.self, decoder: decoder) { response in
             guard let matches = response.value else {
                 print(response.error!.localizedDescription)
                 return }
