@@ -1,7 +1,7 @@
 # parimatch
 Parimatch simple clone project using odds-api (the-odds-api.com).
 
-![ezgif com-video-to-gif](https://user-images.githubusercontent.com/43410212/89612472-8a8efd00-d888-11ea-8be8-5befb0f58f1d.gif)
+<img src="https://user-images.githubusercontent.com/43410212/89612472-8a8efd00-d888-11ea-8be8-5befb0f58f1d.gif" width="200" />
 
 ## Screens
 ![Снимок экрана 2020-08-07 в 08 33 33](https://user-images.githubusercontent.com/43410212/89612583-d0e45c00-d888-11ea-947f-e36e8e5f1312.png)
