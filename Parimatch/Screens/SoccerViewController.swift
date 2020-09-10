@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class SoccerViewController: UIViewController {
+class SoccerViewController: DataLoadingViewController {
     
     let tableView = UITableView()
     var matches = [SoccerMatch]()
@@ -21,21 +21,24 @@ class SoccerViewController: UIViewController {
         super.viewDidLoad()
         title = "Soccer"
         
-        fetchSoccerMatches()
         configureColors()
         configureTableView()
+        fetchSoccerMatches()
     }
     
     private func fetchSoccerMatches() {
+        showLoadingScreen()
         let request = AF.request("https://api.the-odds-api.com/v3/odds/?apiKey=\(Api.apiKey)&sport=soccer&region=eu&mkt=h2h")
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .secondsSince1970
         request.responseDecodable(of: SoccerMatches.self, decoder: decoder) { response in
             guard let matches = response.value else {
                 print(response.error!.localizedDescription)
+                self.stopLoadingScreen()
                 return }
             
             self.matches = matches.data
+            self.stopLoadingScreen()
             self.tableView.reloadData()
         }
     }

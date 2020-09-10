@@ -43,6 +43,7 @@
 		5330673C24DAD5DF00577B0C /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5330673B24DAD5DF00577B0C /* Date+Ext.swift */; };
 		5330673E24DAF3A200577B0C /* PlaceBetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5330673D24DAF3A200577B0C /* PlaceBetButton.swift */; };
 		5330674124DAFE2200577B0C /* AmountTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5330674024DAFE2200577B0C /* AmountTextField.swift */; };
+		5360646224DC74A100C44002 /* DataLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5360646124DC74A100C44002 /* DataLoadingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		5330673B24DAD5DF00577B0C /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		5330673D24DAF3A200577B0C /* PlaceBetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceBetButton.swift; sourceTree = "<group>"; };
 		5330674024DAFE2200577B0C /* AmountTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTextField.swift; sourceTree = "<group>"; };
+		5360646124DC74A100C44002 /* DataLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoadingViewController.swift; sourceTree = "<group>"; };
 		B1E544AEE2D7010BB85F772A /* Pods-Parimatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parimatch.debug.xcconfig"; path = "Target Support Files/Pods-Parimatch/Pods-Parimatch.debug.xcconfig"; sourceTree = "<group>"; };
 		D067B5766A8877696E168CF8 /* Pods_Parimatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parimatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -148,6 +150,7 @@
 				5323211924D5E0D4007EC6EB /* SoccerViewController.swift */,
 				5323214C24D6A05A007EC6EB /* BetsViewController.swift */,
 				5330673924DACBE800577B0C /* MakeBetViewController.swift */,
+				5360646124DC74A100C44002 /* DataLoadingViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				5323215624D6B828007EC6EB /* Site.swift in Sources */,
 				5323216E24D9AE6D007EC6EB /* MatchCard.swift in Sources */,
 				5323216424D7F8A7007EC6EB /* CoefficientButton.swift in Sources */,
+				5360646224DC74A100C44002 /* DataLoadingViewController.swift in Sources */,
 				5330673E24DAF3A200577B0C /* PlaceBetButton.swift in Sources */,
 				5330673824DA7B7000577B0C /* SoccerMainTableViewCell.swift in Sources */,
 				5323214A24D694B9007EC6EB /* PMTabBarController.swift in Sources */,

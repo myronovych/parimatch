@@ -43,7 +43,10 @@ class MakeBetViewController: UIViewController {
     
     private func configure() {
         view.backgroundColor = .black
+        navigationController?.navigationBar.barTintColor = .black
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
+        navigationItem.rightBarButtonItem?.tintColor = Colors.mainYellow
     }
     
     @objc private func dismissVC() {
