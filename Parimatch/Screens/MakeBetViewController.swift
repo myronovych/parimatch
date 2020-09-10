@@ -39,6 +39,7 @@ class MakeBetViewController: UIViewController {
         
         configure()
         configureElements()
+        addKeyBoardObservers()
     }
     
     private func configure() {
@@ -47,7 +48,7 @@ class MakeBetViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
         navigationItem.rightBarButtonItem?.tintColor = Colors.mainYellow
-    }
+}
     
     @objc private func dismissVC() {
         dismiss(animated: true)
@@ -280,6 +281,25 @@ class MakeBetViewController: UIViewController {
             coefficientLabel.bottomAnchor.constraint(equalTo: resultLabel.bottomAnchor),
             coefficientLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding)
         ])
+    }
+    
+    private func addKeyBoardObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
     
 }
