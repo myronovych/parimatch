@@ -78,6 +78,3 @@ extension BetsViewController: UITableViewDataSource, UITableViewDelegate {
     
 }
 
-let soccerBet1 = SoccerBet(soccerMatch: match1, betOption: SoccerBetOption.W1, coefficient: 2.0, sum: 100)
-let match1 = SoccerMatch(sportNice: "EPL", teams: ["Man U.", "Arsenal"], commenceTime: Date(timeIntervalSince1970: 1415637900), homeTeam: "Arsenal", sites: [site1])
-let site1 = Site(siteKey: "PariMatch", siteNice: "Parimatch", odds: ["h2h":[2.0, 3.4, 4.5]])
