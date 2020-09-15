@@ -63,7 +63,7 @@ class BetTableViewCell: SoccerMainTableViewCell {
         yourBetLabel.text = "Your bet:"
         betSum.text = String(sum)
         possibleWinLabel.text = "Possible win:"
-        sumWinLabel.text = String(coefficient * Double(sum))
+        sumWinLabel.text = String(format: "%.2f", coefficient * Double(sum))
     }
     
     private func configureLabels() {
