@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol MatchBetDelegate {
+protocol MatchBetDelegate: class {
     func didSelectBet(soccerMatch: SoccerMatch, sender: CoefficientButton)
 }
 
@@ -16,7 +16,7 @@ class SoccerMatchTableViewCell: SoccerMainTableViewCell {
     
     static let reuseIdentifier = "soccerMatchCell"
     
-    var betDelegate: MatchBetDelegate!
+    weak var betDelegate: MatchBetDelegate!
     
     let hstackCoeffs = UIStackView()
     let firstWinnerButton = CoefficientButton(betOption: SoccerBetOption.W1)
