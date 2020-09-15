@@ -234,7 +234,7 @@ class MakeBetViewController: UIViewController {
             possibleAmountLabel.text = String(bet.coefficient * 0.0) + " UAH "
             return
         }
-        possibleAmountLabel.text = String(format: "%.2f",bet.coefficient * Double(enterAmountView.amountField.text ?? "0")!) + " UAH "
+        possibleAmountLabel.text = String(format: "%.2f",bet.coefficient * Double(textField.text ?? "0")!) + " UAH "
     }
     
     private func configurePossibleWin() {
